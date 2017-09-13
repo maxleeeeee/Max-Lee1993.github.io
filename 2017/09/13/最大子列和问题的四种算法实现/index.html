@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="建站,所思所想," />
+  <meta name="keywords" content="算法复杂度,在线处理,分而治之,递归,循环," />
 
 
 
@@ -94,20 +94,20 @@
 
 
 
-<meta name="description" content="首先欢迎各位来到在下的博客，接下来说说为啥弄这么个东东？">
-<meta name="keywords" content="建站,所思所想">
+<meta name="description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。  问题陈述： 　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&amp;lt;=i&amp;lt;j&amp;lt;=N)的最大值。 问题分析： 　　求给定">
+<meta name="keywords" content="算法复杂度,在线处理,分而治之,递归,循环">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个人博客终于搭建完成">
-<meta property="og:url" content="http://yoursite.com/2017/08/18/个人博客终于搭建完成/index.html">
+<meta property="og:title" content="最大子列和问题的四种算法实现">
+<meta property="og:url" content="http://yoursite.com/2017/09/13/最大子列和问题的四种算法实现/index.html">
 <meta property="og:site_name" content="李举刚的博客">
-<meta property="og:description" content="首先欢迎各位来到在下的博客，接下来说说为啥弄这么个东东？">
+<meta property="og:description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。  问题陈述： 　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&amp;lt;=i&amp;lt;j&amp;lt;=N)的最大值。 问题分析： 　　求给定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img17.3lian.com/d/file/201702/18/7275dece0d593a1b6eb90ef6e4fb499c.jpg">
-<meta property="og:updated_time" content="2017-09-13T08:41:02.188Z">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505306509135&di=8fe249276b9b5f04e893ab2c35517bd2&imgtype=0&src=http%3A%2F%2Fimage.kejixun.com%2F2016%2F1231%2F20161231064114495.jpg">
+<meta property="og:updated_time" content="2017-09-13T10:23:25.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人博客终于搭建完成">
-<meta name="twitter:description" content="首先欢迎各位来到在下的博客，接下来说说为啥弄这么个东东？">
-<meta name="twitter:image" content="http://img17.3lian.com/d/file/201702/18/7275dece0d593a1b6eb90ef6e4fb499c.jpg">
+<meta name="twitter:title" content="最大子列和问题的四种算法实现">
+<meta name="twitter:description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。  问题陈述： 　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&amp;lt;=i&amp;lt;j&amp;lt;=N)的最大值。 问题分析： 　　求给定">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505306509135&di=8fe249276b9b5f04e893ab2c35517bd2&imgtype=0&src=http%3A%2F%2Fimage.kejixun.com%2F2016%2F1231%2F20161231064114495.jpg">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/18/个人博客终于搭建完成/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/13/最大子列和问题的四种算法实现/"/>
 
 
 
 
 
-  <title>个人博客终于搭建完成 | 李举刚的博客</title>
+  <title>最大子列和问题的四种算法实现 | 李举刚的博客</title>
   
 
 
@@ -279,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/个人博客终于搭建完成/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/13/最大子列和问题的四种算法实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="木青">
@@ -296,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">个人博客终于搭建完成</h1>
+          <h1 class="post-title" itemprop="name headline">最大子列和问题的四种算法实现</h1>
         
 
         <div class="post-meta">
@@ -308,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T20:04:16+08:00">
-                2017-08-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-13T17:44:08+08:00">
+                2017-09-13
               </time>
             
 
@@ -331,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">杂谈</span>
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
                   </a>
                 </span>
 
@@ -368,11 +368,233 @@
       
 
       
-        <p><img src="http://img17.3lian.com/d/file/201702/18/7275dece0d593a1b6eb90ef6e4fb499c.jpg" alt=""><br>首先欢迎各位来到在下的博客，接下来说说为啥弄这么个东东？<br><a id="more"></a></p>
-<h3 id="为什么做这个东西？"><a href="#为什么做这个东西？" class="headerlink" title="为什么做这个东西？"></a>为什么做这个东西？</h3><p>一方面看到大牛们都有自己的个人博客，心里就觉得痒痒的很，想着自己也做一个玩一玩；另一方面是因为自己平常也是csdn上写一些东西。</p>
-<h3 id="怎么做的？"><a href="#怎么做的？" class="headerlink" title="怎么做的？"></a>怎么做的？</h3><p>参考了以下几篇资料，在此向原创者鸣谢！以下是链接：<br><a href="http://www.pchou.info/ssgithubPage/2013-01-05-build-github-blog-page-03.html" target="_blank" rel="external">http://www.pchou.info/ssgithubPage/2013-01-05-build-github-blog-page-03.html</a><br><a href="http://www.cnblogs.com/xiao-lei/p/6267123.html" target="_blank" rel="external">http://www.cnblogs.com/xiao-lei/p/6267123.html</a><br><a href="http://blog.csdn.net/wapchief/article/details/54602515" target="_blank" rel="external">http://blog.csdn.net/wapchief/article/details/54602515</a><br><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a><br><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">https://hexo.io/zh-cn/</a><br>做法是用github上的开源项目hexo的next风格加工来的，具体搭建过程等在下有空写个文章补补。</p>
-<h3 id="做了多长时间"><a href="#做了多长时间" class="headerlink" title="做了多长时间"></a>做了多长时间</h3><p>两日光阴，期间方向没错，也知道怎么做，小细节错误不断，一直在debug中，有点吃力！</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>两天时间基本是农药加搭博客中度过喽，总之，还有诸多需要改进的地方，以后慢慢push进去吧。最后，各位客官莫笑，本人水平有限，以前没接触过前端，基本拿来主义，所以做的水平有限，感谢您访问本站！！！<br>下方是打赏，么么哒</p>
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1505306509135&amp;di=8fe249276b9b5f04e893ab2c35517bd2&amp;imgtype=0&amp;src=http%3A%2F%2Fimage.kejixun.com%2F2016%2F1231%2F20161231064114495.jpg" alt=""></p>
+<p>根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。</p>
+<blockquote>
+<p>问题陈述：</p>
+<p>　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&lt;=i&lt;j&lt;=N)的最大值。</p>
+<p>问题分析：</p>
+<p>　　求给定数列的最大子列和。<br><a id="more"></a></p>
+<h3 id="三层循环嵌套，时间复杂度为O-n-3"><a href="#三层循环嵌套，时间复杂度为O-n-3" class="headerlink" title="三层循环嵌套，时间复杂度为O(n^3)"></a>三层循环嵌套，时间复杂度为O(n^3)</h3></blockquote>
+<pre><code>/*作者：Max
+  版本：v1.0
+ 时间：2017-9-11 */ 
+
+#include&lt;stdio.h&gt;
+#include &lt;time.h&gt;
+int Array[6] = {-2,11,-4,13,-5,-2};
+
+/*函数功能：最大子列和时间复杂度最高的算法*/ 
+int MaxSubseqSum1(int *array)
+{
+    int i,j,k;
+    int MaxSum = 0;
+    int ThisSum; 
+
+    for(i=0;i&lt;6;i++)
+    {
+        for(j=i;j&lt;6;j++)
+        {
+            ThisSum = 0;//进入for循环初始化，忽略这个点，打脸 
+            for(k=i;k&lt;=j;k++)    
+                ThisSum += array[k];
+
+            if(ThisSum&gt;MaxSum)
+                MaxSum = ThisSum;
+        } 
+    }
+    return MaxSum;
+}
+
+/*主函数*/
+void main()
+{
+    int value;
+    int i = 1000000;
+    clock_t start, finish;
+double  duration;
+
+start = clock();
+while(i)
+    {
+    value = MaxSubseqSum1(&amp;Array);
+    i--;
+}
+finish = clock();
+
+duration = (double)(finish - start)/CLOCKS_PER_SEC;//将结果转化成以 
+printf(&quot;算法1执行100万次运行时间： %f seconds\n&quot;, duration);
+    printf(&quot;最大子列和为：%d\n&quot;,value);
+}
+</code></pre><p>算法1的时间复杂度最高，实现方式是使用三种循环嵌套，<strong>对所有的子序列求和，在其中找到最大的</strong>。在我的计算机上跑100万次的时间大概是0.156s </p>
+<h3 id="两层循环嵌套，时间复杂度为O-n-2"><a href="#两层循环嵌套，时间复杂度为O-n-2" class="headerlink" title="两层循环嵌套，时间复杂度为O(n^2)"></a>两层循环嵌套，时间复杂度为O(n^2)</h3><pre><code>/*作者：Max
+  版本：v1.0
+ 时间：2017-9-10 */ 
+#include&lt;stdio.h&gt;
+#include &lt;time.h&gt;
+int Array[6] = {-2,11,-4,13,-5,-2};
+
+int MaxSubseqSum2(int *array)
+{
+        int i,j;
+        int MaxSum = 0;
+        int ThisSum;  
+        for(i=0;i&lt;6;i++)
+    {
+            ThisSum = 0;
+            for(j=i;j&lt;6;j++)
+            {
+                ThisSum +=     array[j];
+                if(ThisSum &gt; MaxSum)
+                    MaxSum = ThisSum;
+            }
+        }
+        return MaxSum;    
+} 
+
+
+/*主函数*/
+void main()
+{
+    int value;
+    int i = 1000000;
+    clock_t start, finish;
+double  duration;
+
+start = clock();
+while(i)
+    {
+    value = MaxSubseqSum2(&amp;Array);
+    i--;
+}
+finish = clock();
+
+duration = (double)(finish - start)/CLOCKS_PER_SEC;//将结果转化成以秒为单位 
+printf(&quot;算法1执行100万次运行时间： %f seconds\n&quot;, duration);
+    printf(&quot;最大子列和为：%d\n&quot;,value);
+}
+</code></pre><p>算法2比较好在于<strong>没必要每次都从头加起来，少一层循环</strong>。在我的计算机上跑100万次的时间大概是0.069s</p>
+<h3 id="分而治之，时间复杂度为O-nlogn"><a href="#分而治之，时间复杂度为O-nlogn" class="headerlink" title="分而治之，时间复杂度为O(nlogn)"></a>分而治之，时间复杂度为O(nlogn)</h3><pre><code>/*作者：Max
+  版本：v1.0
+ 时间：2017-9-12 */
+#include&lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+//int Array[6] = {-2,11,-4,13,-5,-2};
+
+int MaxSubseqSum3(int left, int right)
+{
+
+    //int mid = 2;
+    int Array[6] = {-2,11,-4,13,-5,-2};
+
+    if(left == right)
+return Array[left];
+
+//划分为两个规模更小的问题
+int mid = left + right &gt;&gt; 1;//右移1位，相当于除以2 
+    int Left_Ans = MaxSubseqSum3(left, mid);//递归调用，解决左侧的问题 
+int Rig_Ans = MaxSubseqSum3(mid + 1, right);//递归调用，解决右侧的问题 
+
+//横跨分割点的情况
+int sum = 0; 
+    int Left_Max; //右侧最大值  
+    int Rig_Max;//左侧最大值
+int i,j;
+for(i = mid; i &gt;= left; i--)  
+    {
+        Left_Max = Array[mid]; //右侧最大值  
+sum += Array[i];
+if(sum &gt; Left_Max) 
+        Left_Max = sum;
+}
+sum = 0;
+for(j = mid+1; j &lt;= right; j++) 
+    {
+        Rig_Max = Array[mid+1];//左侧最大值
+sum += Array[j];
+if(sum &gt; Rig_Max) 
+        Rig_Max = sum;
+}
+
+//答案是三种情况的最大值
+int ans = Left_Max + Rig_Max;
+if(Left_Ans &gt; ans) 
+        ans = Left_Ans;
+if(Rig_Ans &gt; ans) 
+        ans = Rig_Ans;
+
+
+    return ans;
+} 
+
+/*主函数*/
+void main()
+{
+    int value;
+    int i = 1000000;
+    clock_t start, finish;
+double  duration;
+
+start = clock();
+while(i)
+    {
+    value = MaxSubseqSum3(1,5);
+    i--;
+}
+finish = clock();
+
+duration = (double)(finish - start)/CLOCKS_PER_SEC;//将结果转化成以秒为单位 
+printf(&quot;算法1执行100万次运行时间： %f seconds\n&quot;, duration);
+    printf(&quot;最大子列和为：%d\n&quot;,value);
+}
+</code></pre><p>算法三的特点是<strong>使用了递归的方法，将一个问题不断切割，从而降低算法复杂度</strong> ，在我的计算机上跑100万次的时间大概是0.069s。这里的实现方式貌似有点问题，时间复杂度并没有降低，欢迎大虾指正。</p>
+<h3 id="在线处理，时间复杂度为O-n"><a href="#在线处理，时间复杂度为O-n" class="headerlink" title="在线处理，时间复杂度为O(n)"></a>在线处理，时间复杂度为O(n)</h3><pre><code>/*作者：Max
+  版本：v1.0
+ 时间：2017-9-12 
+*/
+#include&lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int Array[6] = {-2,11,-4,13,-5,-2};
+
+int MaxSubseqSum4(int *array)
+{
+    int MaxSum = 0;
+    int ThisSum = 0;
+    int i;
+    for(i=0;i&lt;6;i++)
+    {
+        ThisSum += array[i];
+        if(ThisSum&gt;MaxSum)
+        MaxSum = ThisSum;
+        else if(ThisSum&lt;0)
+            ThisSum = 0;
+
+    }
+    return MaxSum;
+}
+
+void main()
+{
+    int value;
+    int i = 1000000;
+    clock_t start, finish;
+double  duration;
+
+start = clock();
+while(i)
+    {
+    value = MaxSubseqSum4(&amp;Array);
+    i--;
+}
+finish = clock();
+
+duration = (double)(finish - start)/CLOCKS_PER_SEC;//将结果转化成以秒为单位 
+printf(&quot;算法1执行100万次运行时间： %f seconds\n&quot;, duration);
+    printf(&quot;最大子列和为：%d\n&quot;,value);
+}
+</code></pre><p>算法4最大特点是<strong>变计算边判断，不行就直接丢弃掉</strong>，该算法是解决此问题效率最高的算法。在我的计算机上跑100万次的时间大概是0.016s</p>
 <p><div id="container"></div></p>
 <p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -433,9 +655,15 @@ gitment.render('container')
       
         <div class="post-tags">
           
-            <a href="/tags/建站/" rel="tag"># 建站</a>
+            <a href="/tags/算法复杂度/" rel="tag"># 算法复杂度</a>
           
-            <a href="/tags/所思所想/" rel="tag"># 所思所想</a>
+            <a href="/tags/在线处理/" rel="tag"># 在线处理</a>
+          
+            <a href="/tags/分而治之/" rel="tag"># 分而治之</a>
+          
+            <a href="/tags/递归/" rel="tag"># 递归</a>
+          
+            <a href="/tags/循环/" rel="tag"># 循环</a>
           
         </div>
       
@@ -448,15 +676,15 @@ gitment.render('container')
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/18/个人博客终于搭建完成/" rel="next" title="个人博客终于搭建完成">
+                <i class="fa fa-chevron-left"></i> 个人博客终于搭建完成
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/13/最大子列和问题的四种算法实现/" rel="prev" title="最大子列和问题的四种算法实现">
-                最大子列和问题的四种算法实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -676,7 +904,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么做这个东西？"><span class="nav-number">1.</span> <span class="nav-text">为什么做这个东西？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么做的？"><span class="nav-number">2.</span> <span class="nav-text">怎么做的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#做了多长时间"><span class="nav-number">3.</span> <span class="nav-text">做了多长时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三层循环嵌套，时间复杂度为O-n-3"><span class="nav-number">1.</span> <span class="nav-text">三层循环嵌套，时间复杂度为O(n^3)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两层循环嵌套，时间复杂度为O-n-2"><span class="nav-number">2.</span> <span class="nav-text">两层循环嵌套，时间复杂度为O(n^2)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分而治之，时间复杂度为O-nlogn"><span class="nav-number">3.</span> <span class="nav-text">分而治之，时间复杂度为O(nlogn)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在线处理，时间复杂度为O-n"><span class="nav-number">4.</span> <span class="nav-text">在线处理，时间复杂度为O(n)</span></a></li></ol></div>
             
 
           </div>
