@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.2" />
 
 
 
@@ -103,7 +103,7 @@
 <meta property="og:description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。  问题陈述： 　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&amp;lt;=i&amp;lt;j&amp;lt;=N)的最大值。 问题分析： 　　求给定">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505306509135&di=8fe249276b9b5f04e893ab2c35517bd2&imgtype=0&src=http%3A%2F%2Fimage.kejixun.com%2F2016%2F1231%2F20161231064114495.jpg">
-<meta property="og:updated_time" content="2017-09-13T10:23:25.610Z">
+<meta property="og:updated_time" content="2017-09-15T05:51:04.203Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最大子列和问题的四种算法实现">
 <meta name="twitter:description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。  问题陈述： 　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&amp;lt;=i&amp;lt;j&amp;lt;=N)的最大值。 问题分析： 　　求给定">
@@ -348,6 +348,17 @@
 
           
           
+             <span id="/2017/09/13/最大子列和问题的四种算法实现/" class="leancloud_visitors" data-flag-title="最大子列和问题的四种算法实现">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -375,226 +386,15 @@
 <p>　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&lt;=i&lt;j&lt;=N)的最大值。</p>
 <p>问题分析：</p>
 <p>　　求给定数列的最大子列和。<br><a id="more"></a></p>
-<h3 id="三层循环嵌套，时间复杂度为O-n-3"><a href="#三层循环嵌套，时间复杂度为O-n-3" class="headerlink" title="三层循环嵌套，时间复杂度为O(n^3)"></a>三层循环嵌套，时间复杂度为O(n^3)</h3></blockquote>
-<pre><code>/*作者：Max
-  版本：v1.0
- 时间：2017-9-11 */ 
-
-#include&lt;stdio.h&gt;
-#include &lt;time.h&gt;
-int Array[6] = {-2,11,-4,13,-5,-2};
-
-/*函数功能：最大子列和时间复杂度最高的算法*/ 
-int MaxSubseqSum1(int *array)
-{
-    int i,j,k;
-    int MaxSum = 0;
-    int ThisSum; 
-
-    for(i=0;i&lt;6;i++)
-    {
-        for(j=i;j&lt;6;j++)
-        {
-            ThisSum = 0;//进入for循环初始化，忽略这个点，打脸 
-            for(k=i;k&lt;=j;k++)    
-                ThisSum += array[k];
-
-            if(ThisSum&gt;MaxSum)
-                MaxSum = ThisSum;
-        } 
-    }
-    return MaxSum;
-}
-
-/*主函数*/
-void main()
-{
-    int value;
-    int i = 1000000;
-    clock_t start, finish;
-double  duration;
-
-start = clock();
-while(i)
-    {
-    value = MaxSubseqSum1(&amp;Array);
-    i--;
-}
-finish = clock();
-
-duration = (double)(finish - start)/CLOCKS_PER_SEC;//将结果转化成以 
-printf(&quot;算法1执行100万次运行时间： %f seconds\n&quot;, duration);
-    printf(&quot;最大子列和为：%d\n&quot;,value);
-}
-</code></pre><p>算法1的时间复杂度最高，实现方式是使用三种循环嵌套，<strong>对所有的子序列求和，在其中找到最大的</strong>。在我的计算机上跑100万次的时间大概是0.156s </p>
-<h3 id="两层循环嵌套，时间复杂度为O-n-2"><a href="#两层循环嵌套，时间复杂度为O-n-2" class="headerlink" title="两层循环嵌套，时间复杂度为O(n^2)"></a>两层循环嵌套，时间复杂度为O(n^2)</h3><pre><code>/*作者：Max
-  版本：v1.0
- 时间：2017-9-10 */ 
-#include&lt;stdio.h&gt;
-#include &lt;time.h&gt;
-int Array[6] = {-2,11,-4,13,-5,-2};
-
-int MaxSubseqSum2(int *array)
-{
-        int i,j;
-        int MaxSum = 0;
-        int ThisSum;  
-        for(i=0;i&lt;6;i++)
-    {
-            ThisSum = 0;
-            for(j=i;j&lt;6;j++)
-            {
-                ThisSum +=     array[j];
-                if(ThisSum &gt; MaxSum)
-                    MaxSum = ThisSum;
-            }
-        }
-        return MaxSum;    
-} 
-
-
-/*主函数*/
-void main()
-{
-    int value;
-    int i = 1000000;
-    clock_t start, finish;
-double  duration;
-
-start = clock();
-while(i)
-    {
-    value = MaxSubseqSum2(&amp;Array);
-    i--;
-}
-finish = clock();
-
-duration = (double)(finish - start)/CLOCKS_PER_SEC;//将结果转化成以秒为单位 
-printf(&quot;算法1执行100万次运行时间： %f seconds\n&quot;, duration);
-    printf(&quot;最大子列和为：%d\n&quot;,value);
-}
-</code></pre><p>算法2比较好在于<strong>没必要每次都从头加起来，少一层循环</strong>。在我的计算机上跑100万次的时间大概是0.069s</p>
-<h3 id="分而治之，时间复杂度为O-nlogn"><a href="#分而治之，时间复杂度为O-nlogn" class="headerlink" title="分而治之，时间复杂度为O(nlogn)"></a>分而治之，时间复杂度为O(nlogn)</h3><pre><code>/*作者：Max
-  版本：v1.0
- 时间：2017-9-12 */
-#include&lt;stdio.h&gt;
-#include &lt;time.h&gt;
-
-//int Array[6] = {-2,11,-4,13,-5,-2};
-
-int MaxSubseqSum3(int left, int right)
-{
-
-    //int mid = 2;
-    int Array[6] = {-2,11,-4,13,-5,-2};
-
-    if(left == right)
-return Array[left];
-
-//划分为两个规模更小的问题
-int mid = left + right &gt;&gt; 1;//右移1位，相当于除以2 
-    int Left_Ans = MaxSubseqSum3(left, mid);//递归调用，解决左侧的问题 
-int Rig_Ans = MaxSubseqSum3(mid + 1, right);//递归调用，解决右侧的问题 
-
-//横跨分割点的情况
-int sum = 0; 
-    int Left_Max; //右侧最大值  
-    int Rig_Max;//左侧最大值
-int i,j;
-for(i = mid; i &gt;= left; i--)  
-    {
-        Left_Max = Array[mid]; //右侧最大值  
-sum += Array[i];
-if(sum &gt; Left_Max) 
-        Left_Max = sum;
-}
-sum = 0;
-for(j = mid+1; j &lt;= right; j++) 
-    {
-        Rig_Max = Array[mid+1];//左侧最大值
-sum += Array[j];
-if(sum &gt; Rig_Max) 
-        Rig_Max = sum;
-}
-
-//答案是三种情况的最大值
-int ans = Left_Max + Rig_Max;
-if(Left_Ans &gt; ans) 
-        ans = Left_Ans;
-if(Rig_Ans &gt; ans) 
-        ans = Rig_Ans;
-
-
-    return ans;
-} 
-
-/*主函数*/
-void main()
-{
-    int value;
-    int i = 1000000;
-    clock_t start, finish;
-double  duration;
-
-start = clock();
-while(i)
-    {
-    value = MaxSubseqSum3(1,5);
-    i--;
-}
-finish = clock();
-
-duration = (double)(finish - start)/CLOCKS_PER_SEC;//将结果转化成以秒为单位 
-printf(&quot;算法1执行100万次运行时间： %f seconds\n&quot;, duration);
-    printf(&quot;最大子列和为：%d\n&quot;,value);
-}
-</code></pre><p>算法三的特点是<strong>使用了递归的方法，将一个问题不断切割，从而降低算法复杂度</strong> ，在我的计算机上跑100万次的时间大概是0.069s。这里的实现方式貌似有点问题，时间复杂度并没有降低，欢迎大虾指正。</p>
-<h3 id="在线处理，时间复杂度为O-n"><a href="#在线处理，时间复杂度为O-n" class="headerlink" title="在线处理，时间复杂度为O(n)"></a>在线处理，时间复杂度为O(n)</h3><pre><code>/*作者：Max
-  版本：v1.0
- 时间：2017-9-12 
-*/
-#include&lt;stdio.h&gt;
-#include &lt;time.h&gt;
-
-int Array[6] = {-2,11,-4,13,-5,-2};
-
-int MaxSubseqSum4(int *array)
-{
-    int MaxSum = 0;
-    int ThisSum = 0;
-    int i;
-    for(i=0;i&lt;6;i++)
-    {
-        ThisSum += array[i];
-        if(ThisSum&gt;MaxSum)
-        MaxSum = ThisSum;
-        else if(ThisSum&lt;0)
-            ThisSum = 0;
-
-    }
-    return MaxSum;
-}
-
-void main()
-{
-    int value;
-    int i = 1000000;
-    clock_t start, finish;
-double  duration;
-
-start = clock();
-while(i)
-    {
-    value = MaxSubseqSum4(&amp;Array);
-    i--;
-}
-finish = clock();
-
-duration = (double)(finish - start)/CLOCKS_PER_SEC;//将结果转化成以秒为单位 
-printf(&quot;算法1执行100万次运行时间： %f seconds\n&quot;, duration);
-    printf(&quot;最大子列和为：%d\n&quot;,value);
-}
-</code></pre><p>算法4最大特点是<strong>变计算边判断，不行就直接丢弃掉</strong>，该算法是解决此问题效率最高的算法。在我的计算机上跑100万次的时间大概是0.016s</p>
+</blockquote>
+<h3 id="三层循环嵌套，时间复杂度为O-n-3"><a href="#三层循环嵌套，时间复杂度为O-n-3" class="headerlink" title="三层循环嵌套，时间复杂度为O(n^3)"></a>三层循环嵌套，时间复杂度为O(n^3)</h3><pre><code><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">/*作者：Max</span></div><div class="line"><span class="comment"> 版本：v1.0</span></div><div class="line"><span class="comment"> 时间：2017-9-11 */</span> </div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"><span class="keyword">int</span> Array[<span class="number">6</span>] = &#123;<span class="number">-2</span>,<span class="number">11</span>,<span class="number">-4</span>,<span class="number">13</span>,<span class="number">-5</span>,<span class="number">-2</span>&#125;;</div><div class="line"></div><div class="line"><span class="comment">/*函数功能：最大子列和时间复杂度最高的算法*/</span> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxSubseqSum1</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> i,j,k;</div><div class="line">	<span class="keyword">int</span> MaxSum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> ThisSum; </div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span>(j=i;j&lt;<span class="number">6</span>;j++)</div><div class="line">		&#123;</div><div class="line">			ThisSum = <span class="number">0</span>;<span class="comment">//进入for循环初始化，忽略这个点，打脸 </span></div><div class="line">			<span class="keyword">for</span>(k=i;k&lt;=j;k++)	</div><div class="line">				ThisSum += <span class="built_in">array</span>[k];</div><div class="line">				</div><div class="line">			<span class="keyword">if</span>(ThisSum&gt;MaxSum)</div><div class="line">				MaxSum = ThisSum;</div><div class="line">		&#125; </div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> MaxSum;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*主函数*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> value;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">1000000</span>;</div><div class="line">	<span class="keyword">clock_t</span> start, finish;</div><div class="line"><span class="keyword">double</span>  duration;</div><div class="line"></div><div class="line">start = clock();</div><div class="line"><span class="keyword">while</span>(i)</div><div class="line">	&#123;</div><div class="line">	value = MaxSubseqSum1(&amp;Array);</div><div class="line">	i--;</div><div class="line">&#125;</div><div class="line">finish = clock();</div><div class="line"></div><div class="line">duration = (<span class="keyword">double</span>)(finish - start)/CLOCKS_PER_SEC;<span class="comment">//将结果转化成以 </span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"算法1执行100万次运行时间： %f seconds\n"</span>, duration);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"最大子列和为：%d\n"</span>,value);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>算法1的时间复杂度最高，实现方式是使用三种循环嵌套，<strong>对所有的子序列求和，在其中找到最大的</strong>。在我的计算机上跑100万次的时间大概是0.156s</p>
+<h3 id="两层循环嵌套，时间复杂度为O-n-2"><a href="#两层循环嵌套，时间复杂度为O-n-2" class="headerlink" title="两层循环嵌套，时间复杂度为O(n^2)"></a>两层循环嵌套，时间复杂度为O(n^2)</h3><pre><code><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">/*作者：Max</span></div><div class="line"><span class="comment"> 版本：v1.0</span></div><div class="line"><span class="comment"> 时间：2017-9-10 */</span> </div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"><span class="keyword">int</span> Array[<span class="number">6</span>] = &#123;<span class="number">-2</span>,<span class="number">11</span>,<span class="number">-4</span>,<span class="number">13</span>,<span class="number">-5</span>,<span class="number">-2</span>&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxSubseqSum2</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">		<span class="keyword">int</span> i,j;</div><div class="line">		<span class="keyword">int</span> MaxSum = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> ThisSum;  </div><div class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)</div><div class="line">	&#123;</div><div class="line">			ThisSum = <span class="number">0</span>;</div><div class="line">			<span class="keyword">for</span>(j=i;j&lt;<span class="number">6</span>;j++)</div><div class="line">			&#123;</div><div class="line">				ThisSum += 	<span class="built_in">array</span>[j];</div><div class="line">				<span class="keyword">if</span>(ThisSum &gt; MaxSum)</div><div class="line">					MaxSum = ThisSum;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> MaxSum;	</div><div class="line">&#125; </div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/*主函数*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> value;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">1000000</span>;</div><div class="line">	<span class="keyword">clock_t</span> start, finish;</div><div class="line"><span class="keyword">double</span>  duration;</div><div class="line"></div><div class="line">start = clock();</div><div class="line"><span class="keyword">while</span>(i)</div><div class="line">	&#123;</div><div class="line">	value = MaxSubseqSum2(&amp;Array);</div><div class="line">	i--;</div><div class="line">&#125;</div><div class="line">finish = clock();</div><div class="line"></div><div class="line">duration = (<span class="keyword">double</span>)(finish - start)/CLOCKS_PER_SEC;<span class="comment">//将结果转化成以秒为单位 </span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"算法1执行100万次运行时间： %f seconds\n"</span>, duration);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"最大子列和为：%d\n"</span>,value);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>算法2比较好在于<strong>没必要每次都从头加起来，少一层循环</strong>。这比第一种算法聪明了许多，算法复杂度降低了不少在我的计算机上跑100万次的时间大概是0.069s.</p>
+<h3 id="分而治之，时间复杂度为O-nlogn"><a href="#分而治之，时间复杂度为O-nlogn" class="headerlink" title="分而治之，时间复杂度为O(nlogn)"></a>分而治之，时间复杂度为O(nlogn)</h3><pre><code><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">/*作者：Max</span></div><div class="line"><span class="comment"> 版本：v1.0</span></div><div class="line"><span class="comment"> 时间：2017-9-12 */</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="comment">//int Array[6] = &#123;-2,11,-4,13,-5,-2&#125;;</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxSubseqSum3</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">//int mid = 2;</span></div><div class="line">	<span class="keyword">int</span> Array[<span class="number">6</span>] = &#123;<span class="number">-2</span>,<span class="number">11</span>,<span class="number">-4</span>,<span class="number">13</span>,<span class="number">-5</span>,<span class="number">-2</span>&#125;;</div><div class="line">	</div><div class="line">	<span class="keyword">if</span>(left == right)</div><div class="line"><span class="keyword">return</span> Array[left];</div><div class="line"></div><div class="line"><span class="comment">//划分为两个规模更小的问题</span></div><div class="line"><span class="keyword">int</span> mid = left + right &gt;&gt; <span class="number">1</span>;<span class="comment">//右移1位，相当于除以2 </span></div><div class="line">	<span class="keyword">int</span> Left_Ans = MaxSubseqSum3(left, mid);<span class="comment">//递归调用，解决左侧的问题 </span></div><div class="line"><span class="keyword">int</span> Rig_Ans = MaxSubseqSum3(mid + <span class="number">1</span>, right);<span class="comment">//递归调用，解决右侧的问题 </span></div><div class="line"></div><div class="line"><span class="comment">//横跨分割点的情况</span></div><div class="line"><span class="keyword">int</span> sum = <span class="number">0</span>; </div><div class="line">	<span class="keyword">int</span> Left_Max; <span class="comment">//右侧最大值  </span></div><div class="line">	<span class="keyword">int</span> Rig_Max;<span class="comment">//左侧最大值</span></div><div class="line"><span class="keyword">int</span> i,j;</div><div class="line"><span class="keyword">for</span>(i = mid; i &gt;= left; i--)  </div><div class="line">	&#123;</div><div class="line">		Left_Max = Array[mid]; <span class="comment">//右侧最大值  </span></div><div class="line">sum += Array[i];</div><div class="line"><span class="keyword">if</span>(sum &gt; Left_Max) </div><div class="line">		Left_Max = sum;</div><div class="line">&#125;</div><div class="line">sum = <span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(j = mid+<span class="number">1</span>; j &lt;= right; j++) </div><div class="line">	&#123;</div><div class="line">		Rig_Max = Array[mid+<span class="number">1</span>];<span class="comment">//左侧最大值</span></div><div class="line">sum += Array[j];</div><div class="line"><span class="keyword">if</span>(sum &gt; Rig_Max) </div><div class="line">		Rig_Max = sum;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//答案是三种情况的最大值</span></div><div class="line"><span class="keyword">int</span> ans = Left_Max + Rig_Max;</div><div class="line"><span class="keyword">if</span>(Left_Ans &gt; ans) </div><div class="line">		ans = Left_Ans;</div><div class="line"><span class="keyword">if</span>(Rig_Ans &gt; ans) </div><div class="line">		ans = Rig_Ans;</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="comment">/*主函数*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> value;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">1000000</span>;</div><div class="line">	<span class="keyword">clock_t</span> start, finish;</div><div class="line"><span class="keyword">double</span>  duration;</div><div class="line"></div><div class="line">start = clock();</div><div class="line"><span class="keyword">while</span>(i)</div><div class="line">	&#123;</div><div class="line">	value = MaxSubseqSum3(<span class="number">1</span>,<span class="number">5</span>);</div><div class="line">	i--;</div><div class="line">&#125;</div><div class="line">finish = clock();</div><div class="line"></div><div class="line">duration = (<span class="keyword">double</span>)(finish - start)/CLOCKS_PER_SEC;<span class="comment">//将结果转化成以秒为单位 </span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"算法1执行100万次运行时间： %f seconds\n"</span>, duration);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"最大子列和为：%d\n"</span>,value);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>算法3的特点是<strong>使用了递归的方法，将一个问题不断切割，从而降低算法复杂度</strong> ，在我的计算机上跑100万次的时间大概是0.069s。这里的实现方式貌似有点问题，时间复杂度并没有降低，欢迎大虾指正。</p>
+<h3 id="在线处理，时间复杂度为O-n"><a href="#在线处理，时间复杂度为O-n" class="headerlink" title="在线处理，时间复杂度为O(n)"></a>在线处理，时间复杂度为O(n)</h3><pre><code><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">/*作者：Max</span></div><div class="line"><span class="comment"> 版本：v1.0</span></div><div class="line"><span class="comment"> 时间：2017-9-12 */</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> Array[<span class="number">6</span>] = &#123;<span class="number">-2</span>,<span class="number">11</span>,<span class="number">-4</span>,<span class="number">13</span>,<span class="number">-5</span>,<span class="number">-2</span>&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxSubseqSum4</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> MaxSum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> ThisSum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)</div><div class="line">	&#123;</div><div class="line">		ThisSum += <span class="built_in">array</span>[i];</div><div class="line">		<span class="keyword">if</span>(ThisSum&gt;MaxSum)</div><div class="line">		MaxSum = ThisSum;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(ThisSum&lt;<span class="number">0</span>)</div><div class="line">			ThisSum = <span class="number">0</span>;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> MaxSum;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> value;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">1000000</span>;</div><div class="line">	<span class="keyword">clock_t</span> start, finish;</div><div class="line"><span class="keyword">double</span>  duration;</div><div class="line"></div><div class="line">start = clock();</div><div class="line"><span class="keyword">while</span>(i)</div><div class="line">	&#123;</div><div class="line">	value = MaxSubseqSum4(&amp;Array);</div><div class="line">	i--;</div><div class="line">&#125;</div><div class="line">finish = clock();</div><div class="line"></div><div class="line">duration = (<span class="keyword">double</span>)(finish - start)/CLOCKS_PER_SEC;<span class="comment">//将结果转化成以秒为单位 </span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"算法1执行100万次运行时间： %f seconds\n"</span>, duration);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"最大子列和为：%d\n"</span>,value);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>算法4最大特点是<strong>边计算边判断，不行就直接丢弃掉</strong>，该算法是解决此问题效率最高的算法。在我的计算机上跑100万次的时间大概是0.016s</p>
 <p><div id="container"></div></p>
 <p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -885,6 +685,30 @@ var jiathis_config={
                   <a href="http://theme-next.iissnan.com/" title="NexT使用文档" target="_blank">NexT使用文档</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/blog/" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://coolshell.cn/" title="酷 壳" target="_blank">酷 壳</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zyan.cc/" title="张宴的博客" target="_blank">张宴的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zlovezl.cn/" title="Piglei" target="_blank">Piglei</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dongwm.com/" title="小明明s à domicile" target="_blank">小明明s à domicile</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://python-china.org/" title="Python China" target="_blank">Python China</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -926,7 +750,7 @@ var jiathis_config={
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2016 &mdash; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -1096,10 +920,119 @@ var jiathis_config={
   
 
   
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("W32o78R5Be4c6u9yIO7qfUy4-gzGzoHsz", "BYtov3RnhK9fVzGF53aiWRKe");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
   
+
+  
+  
+
 
   
 
