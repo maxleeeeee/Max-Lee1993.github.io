@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="翻译,编程,循环," />
 
 
 
@@ -94,16 +94,20 @@
 
 
 
-<meta name="description" content="努力成为造轮子的人">
-<meta property="og:type" content="website">
-<meta property="og:title" content="李举刚的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="原文载于Daniel Roy Greenfeld的博客，博主是《Two Scoops of Django》的作者。博客里面很多Python技巧，另外在Django方面作者贡献了非常多的内容和开源项目。以下是他的一篇博客文章的翻译，原文请戳这里：">
+<meta name="keywords" content="翻译,编程,循环">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(译)代码：永无止境">
+<meta property="og:url" content="http://yoursite.com/2017/09/29/（译）代码：永无止境/index.html">
 <meta property="og:site_name" content="李举刚的博客">
-<meta property="og:description" content="努力成为造轮子的人">
+<meta property="og:description" content="原文载于Daniel Roy Greenfeld的博客，博主是《Two Scoops of Django》的作者。博客里面很多Python技巧，另外在Django方面作者贡献了非常多的内容和开源项目。以下是他的一篇博客文章的翻译，原文请戳这里：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.pydanny.com/static/code-code-code.png">
+<meta property="og:updated_time" content="2017-09-29T14:43:20.939Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="李举刚的博客">
-<meta name="twitter:description" content="努力成为造轮子的人">
+<meta name="twitter:title" content="(译)代码：永无止境">
+<meta name="twitter:description" content="原文载于Daniel Roy Greenfeld的博客，博主是《Two Scoops of Django》的作者。博客里面很多Python技巧，另外在Django方面作者贡献了非常多的内容和开源项目。以下是他的一篇博客文章的翻译，原文请戳这里：">
+<meta name="twitter:image" content="https://www.pydanny.com/static/code-code-code.png">
 
 
 
@@ -132,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/29/（译）代码：永无止境/"/>
 
 
 
 
 
-  <title>李举刚的博客</title>
+  <title>(译)代码：永无止境 | 李举刚的博客</title>
   
 
 
@@ -157,9 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,9 +264,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -294,9 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/29/（译）代码：永无止境/" itemprop="url">(译)代码：永无止境</a></h1>
+          <h1 class="post-title" itemprop="name headline">(译)代码：永无止境</h1>
         
 
         <div class="post-meta">
@@ -379,17 +379,98 @@
       
 
       
-        
-          <p><img src="https://www.pydanny.com/static/code-code-code.png" alt=""></p>
-<p>原文载于<a href="https://www.pydanny.com/code-code-code.html" target="_blank" rel="external">Daniel Roy Greenfeld</a>的博客，博主是《Two Scoops of Django》的作者。博客里面很多Python技巧，另外在Django方面作者贡献了非常多的内容和开源项目。以下是他的一篇博客文章的翻译，原文请戳<a href="https://www.pydanny.com/code-code-code.html" target="_blank" rel="external">这里</a>：<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/29/（译）代码：永无止境/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p><img src="https://www.pydanny.com/static/code-code-code.png" alt=""></p>
+<p>原文载于<a href="https://www.pydanny.com/code-code-code.html" target="_blank" rel="external">Daniel Roy Greenfeld</a>的博客，博主是《Two Scoops of Django》的作者。博客里面很多Python技巧，另外在Django方面作者贡献了非常多的内容和开源项目。以下是他的一篇博客文章的翻译，原文请戳<a href="https://www.pydanny.com/code-code-code.html" target="_blank" rel="external">这里</a>：<br><a id="more"></a></p>
+<blockquote>
+<p>I’m often asked by new programmers how they can forge a path into using their skills professionally. Or how they can get better at writing software.</p>
+</blockquote>
+<p>一些新的程序员经常问我：他们如何能锻炼出一条路使得他们的技能更加专业，或者他们如何更加擅长编写软件。</p>
+<h1 id="How-to-Improve-Your-Coding-Skills（如何提高你的编程技能）"><a href="#How-to-Improve-Your-Coding-Skills（如何提高你的编程技能）" class="headerlink" title="How to Improve Your Coding Skills（如何提高你的编程技能）"></a>How to Improve Your Coding Skills（如何提高你的编程技能）</h1><blockquote>
+<p>This was my path. It may not be your path. This path also isn’t in any particular order, all of them apply from the moment you start on the path.</p>
+</blockquote>
+<p>这是我的路子，可能无法成为你的路子。这些建议也没有任何特别的借鉴之处，所有的建议适用于你开始的时候。</p>
+<blockquote>
+<p>1.I coded. A lot. From silly little scripts to automating tasks to attempting full-blown projects. At work or for fun. I failed a lot, but learned along the way.</p>
+</blockquote>
+<p>1.我编过许多程序。从一些简单的脚本到自动化的任务企图成为成熟的项目。工作也或者为玩。我失败过很多次，但一直在学习的路上。</p>
+<blockquote>
+<p>2.I didn’t jump from language to language. Instead I stayed in a few places for years and focused my learning on those tools. My 19+ year career can be summed up as FoxPro then Java then Python. In the middle of things I picked up JavaScript. Sure, I’ve dallied with a few things (Lisp, Haskell, Lua, Perl, ColdFusion, Go), but by staying focused on a small set of tools I’m better than mediocre.</p>
+</blockquote>
+<p>2.我没有从一种（编程）语言跳到另一种（编程）语言。反而我许多年关注一些领域并且把学习聚焦在一些工具上。我19岁之后的技能可以被概括为<a href="https://baike.baidu.com/item/FoxPro%E6%95%B0%E6%8D%AE%E5%BA%93/3490619" target="_blank" rel="external">FoxPro（是一种数据库，详细介绍请看链接）</a>，还有Java和Python。在学习前文所述的技能之外我拾起了JavaScript。当然，我还玩了一些语言（Lisp, Haskell, Lua, Perl, ColdFusion, Go）但是通过持续聚焦一系列小的工具我的技能提高了不少。</p>
+<blockquote>
+<p>3.I coded lots. Yes, this is a repeat of #1.</p>
+</blockquote>
+<p>3.我编过太多程序。是的，这就是一直重复下去。</p>
+<blockquote>
+<p>4.Once I got the basics of a language, I looked up best practices for each of them. Then I religiously adhered to them, even becoming dogmatic about it. In general this means my code is more easily read. More easily debugged. And most importantly, more easily shared.</p>
+</blockquote>
+<p>4.当我掌握一种编程语言的基础，我会为每种语言追求最好的练习。之后笃信的坚持编程。甚至变的武断的关于编程语言。大体上这就意味着我的代码易懂，也很容易调试。更重要的是，更容易去分享。</p>
+<blockquote>
+<p>5.Did I mention that I coded a lot? You can never get good at anything unless you practice. Another repeat of #1.</p>
+</blockquote>
+<p>5.我强调我编程很多了吧。除非练习，否则你无法擅长任何事情。之外就是重复第一条所说的。</p>
+<blockquote>
+<p>6.I got over my fear/pride of asking questions. Well, mostly, I still am afraid/prideful from time to time. Honestly, by asking questions you aren’t showing what you don’t know, you are showing you are willing to learn. Also, the simple act of figuring out how to ask a question can put you in the right mindset to determine the answer yourself.</p>
+</blockquote>
+<p>6.我克服了提问的恐惧/自大。是的，很多时候我仍然是恐惧的/自大的。诚实地，通过提问你不是表现你什么都不懂，而是你要展现的是你乐意去学习。当然，一个简单的的行动是：解决如何去提问可以给你良好的心态去确定你自己的回答。</p>
+<blockquote>
+<p>7.As soon as I asked a question, whether or not I got an answer, I coded some more. Code, code, code! Yet another repeat of #1</p>
+</blockquote>
+<p>7.尽我所能的提问，无论有没有得到答案，更多的编程。代码：永无止境！仍然重复第一条说的。</p>
+<blockquote>
+<p>8.Once I’ve gotten the hang of a language, I looked for cookbooks and/or pocket references on it. I prefer paper copies of tech books (everything else I read is electronic). The recipes in cookbooks become the foundation of my toolkit. The terse, easy-to-find reminders in the pocket reference mean less cognitive overload.</p>
+</blockquote>
+<p>8.当我已经获得了一种语言的“钩子”，我寻找“食谱”或者“口袋”参考它们。我更喜欢科技书的拷贝（我读过的一切书都是电子版的）。这些“食谱”成了我工具包的组成。简洁的，容易发现的在“口袋”中的提示意味着很少的认知负担。<br><strong>注：该处翻译的不是很恰当，待后来在原文上继续修改。</strong></p>
+<blockquote>
+<p>9.I took those recipes and references and coded with them. Again and again I coded. In work hours or play time. Practice makes perfect! Why do I keep repeating #1?</p>
+</blockquote>
+<p>9.我带着这些“食谱”和参考，一遍又一遍的编程。在工作时间或者娱乐时间。熟能生巧！这就是为什么我一直重复第一条所说的。</p>
+<blockquote>
+<p>10.Over the years I’ve stayed with the easiest-to-learn stable IDEs/text editors. Yes, I know there are really powerful tools with arcane commands (Vim, EMACS, etc), but I don’t want to have to stop what I’m doing to learn new tools. I want to code, not tinker with desktop tools or arcane text editors.</p>
+</blockquote>
+<p>过去的这些年我使用最容易学习而且稳定的ide或者文本编辑器。是的，我知道者的确是很强大的工具有些难懂的命令(Vim, EMACS, 等等)，但我不想去停下来我该学习的新的工具。我想去编程，不用桌面工具或者难用的文本编辑器。</p>
+<blockquote>
+<p>11.And again, reference back to #1, I use the text editor to write code. Code, code, code! Until my fingers and hands hurt, until I’ve had to learn how to deal with carpal tunnel syndrome. Code, code, code! It’s like learning martial arts, guitar, or anything, repetition of simple actions provides the confidence for you to either combine those actions into something greater or learn something more complex.</p>
+</blockquote>
+<p>并且再一次，参考第一步所说的，我是用文本编辑器不停的写代码！直到我的指头和手变伤，直到我已经学习到如何处理腕管综合征。代码永无止境！这就像学习武术，吉他，或者其他任何技能，简单动作的重复提供给你自信去组合任何这些动作使得技能更棒后者学习一些更加复杂的东西。</p>
+<h1 id="What-I-Wish-I-Had-Done-（我希望我做了很多）"><a href="#What-I-Wish-I-Had-Done-（我希望我做了很多）" class="headerlink" title="What I Wish I Had Done #（我希望我做了很多）"></a>What I Wish I Had Done #（我希望我做了很多）</h1><blockquote>
+<p>Studied computer science. If I could do it all over again, that would have been the focus of my academic studies. It wouldn’t replace anything on my list, the path I’ve defined remains the same. Code, code, code!</p>
+</blockquote>
+<p>学习计算机科学，如果你能再做一遍，计算机科学将是你学术研究的中心。计算机科学不会代替你的列表的任何事情，你已经定义保持相同的道路。代码，永无止境！</p>
+<blockquote>
+<p>It goes without saying I should have taken more tutorials. Nothing gives a kickstart like having an instructor, online or in-person, who guides you down the right path. Then you can code, code, code!</p>
+</blockquote>
+<p>这要一直在进行而不是说说而已，你本应该获得了很多的指导。没有人提供行动，像有一个能指导你走正确的道路的指导者，在线或者线下。之后你可以一直编程。</p>
+<blockquote>
+<p>Practice makes perfect, right?</p>
+</blockquote>
+<p>熟能生巧，对吗？</p>
+<p><div id="container"></div></p>
+<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '24504358', // 可选。默认为 location.href
+  owner: 'Max-Lee1993',
+  repo: 'Max-Lee1993.github.io',
+  oauth: {
+    client_id: '71fbfc2db0b90e90d775',
+    client_secret: '370abbe51846bc6f7aca03fca0934c7b687ce338',
+  },
+})
+gitment.render('container')
+</script>
+
+
+
+
+
+
+
+
+
+
+
       
     </div>
     
@@ -399,334 +480,74 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="木青 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="木青 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/BeautifulSoup库详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="木青">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="李举刚的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/26/BeautifulSoup库详解/" itemprop="url">BeautifulSoup库详解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-26T19:48:39+08:00">
-                2017-09-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python爬虫/" itemprop="url" rel="index">
-                    <span itemprop="name">python爬虫</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/翻译/" rel="tag"># 翻译</a>
           
-
+            <a href="/tags/编程/" rel="tag"># 编程</a>
           
-            
+            <a href="/tags/循环/" rel="tag"># 循环</a>
           
-
-          
-          
-             <span id="/2017/09/26/BeautifulSoup库详解/" class="leancloud_visitors" data-flag-title="BeautifulSoup库详解">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p><strong>导语</strong>：在进行复杂的html页面解析时，由于构成一个网页的元素很复杂，我们想快速的找到自己想用的信息，使用BeautifualSoup库来解析Html页面很便利，它可以将指定的标签解析出来。当然你也可以设置过滤条件，进一步将信息过滤，这些将会在后文详细叙述。其重要函数之一是：<strong><code>findAll()</code></strong>。该函数函数用来将标签的不同属性过滤掉，从而找到自己需要的标签，下面介绍下该库的具体使用方法。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/26/BeautifulSoup库详解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/26/BeautifulSoup库详解/" rel="next" title="BeautifulSoup库详解">
+                <i class="fa fa-chevron-left"></i> BeautifulSoup库详解
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/13/最大子列和问题的四种算法实现/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="木青">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="李举刚的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/13/最大子列和问题的四种算法实现/" itemprop="url">最大子列和问题的四种算法实现</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-13T17:44:08+08:00">
-                2017-09-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/09/13/最大子列和问题的四种算法实现/" class="leancloud_visitors" data-flag-title="最大子列和问题的四种算法实现">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1505306509135&amp;di=8fe249276b9b5f04e893ab2c35517bd2&amp;imgtype=0&amp;src=http%3A%2F%2Fimage.kejixun.com%2F2016%2F1231%2F20161231064114495.jpg" alt=""></p>
-<p>根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/13/最大子列和问题的四种算法实现/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -736,167 +557,37 @@
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/个人博客终于搭建完成/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="木青">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="李举刚的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/18/个人博客终于搭建完成/" itemprop="url">个人博客终于搭建完成</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T20:04:16+08:00">
-                2017-08-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">杂谈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/08/18/个人博客终于搭建完成/" class="leancloud_visitors" data-flag-title="个人博客终于搭建完成">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://img17.3lian.com/d/file/201702/18/7275dece0d593a1b6eb90ef6e4fb499c.jpg" alt=""><br>首先欢迎各位来到在下的博客，接下来说说为啥弄这么个东东？<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/18/个人博客终于搭建完成/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -904,6 +595,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -924,8 +619,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/image/avatar.jpg"
@@ -1072,6 +776,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-Improve-Your-Coding-Skills（如何提高你的编程技能）"><span class="nav-number">1.</span> <span class="nav-text">How to Improve Your Coding Skills（如何提高你的编程技能）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-I-Wish-I-Had-Done-（我希望我做了很多）"><span class="nav-number">2.</span> <span class="nav-text">What I Wish I Had Done #（我希望我做了很多）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -1207,10 +927,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
@@ -1368,26 +1088,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

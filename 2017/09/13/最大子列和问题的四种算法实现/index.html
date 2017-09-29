@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="算法复杂度,在线处理,分而治之,递归,循环," />
+  <meta name="keywords" content="循环,算法复杂度,在线处理,分而治之,递归," />
 
 
 
@@ -94,19 +94,19 @@
 
 
 
-<meta name="description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。  问题陈述： 　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&amp;lt;=i&amp;lt;j&amp;lt;=N)的最大值。 问题分析： 　　求给定">
-<meta name="keywords" content="算法复杂度,在线处理,分而治之,递归,循环">
+<meta name="description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。">
+<meta name="keywords" content="循环,算法复杂度,在线处理,分而治之,递归">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最大子列和问题的四种算法实现">
 <meta property="og:url" content="http://yoursite.com/2017/09/13/最大子列和问题的四种算法实现/index.html">
 <meta property="og:site_name" content="李举刚的博客">
-<meta property="og:description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。  问题陈述： 　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&amp;lt;=i&amp;lt;j&amp;lt;=N)的最大值。 问题分析： 　　求给定">
+<meta property="og:description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505306509135&di=8fe249276b9b5f04e893ab2c35517bd2&imgtype=0&src=http%3A%2F%2Fimage.kejixun.com%2F2016%2F1231%2F20161231064114495.jpg">
-<meta property="og:updated_time" content="2017-09-26T13:28:50.330Z">
+<meta property="og:updated_time" content="2017-09-29T14:45:08.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最大子列和问题的四种算法实现">
-<meta name="twitter:description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。  问题陈述： 　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&amp;lt;=i&amp;lt;j&amp;lt;=N)的最大值。 问题分析： 　　求给定">
+<meta name="twitter:description" content="根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。">
 <meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505306509135&di=8fe249276b9b5f04e893ab2c35517bd2&imgtype=0&src=http%3A%2F%2Fimage.kejixun.com%2F2016%2F1231%2F20161231064114495.jpg">
 
 
@@ -380,12 +380,12 @@
 
       
         <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1505306509135&amp;di=8fe249276b9b5f04e893ab2c35517bd2&amp;imgtype=0&amp;src=http%3A%2F%2Fimage.kejixun.com%2F2016%2F1231%2F20161231064114495.jpg" alt=""></p>
-<p>根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。</p>
+<p>根据不同的时间复杂度用C语言实现的4种算法，以最简单的6个数的最大子列和为例。代码均为自己实现，测试通过。其中有详细的注释，相信不难理解，下面我将这四种实现代码一一列举出来。<br><a id="more"></a></p>
 <blockquote>
 <p>问题陈述：</p>
 <p>　　给定N个整数的序列{A1, A2, … , AN}，求函数ƒ(i, j) = max{0, Ai + Ai+1 + … + Aj}(1&lt;=i&lt;j&lt;=N)的最大值。</p>
 <p>问题分析：</p>
-<p>　　求给定数列的最大子列和。<br><a id="more"></a></p>
+<p>　　求给定数列的最大子列和。</p>
 </blockquote>
 <h3 id="三层循环嵌套，时间复杂度为O-n-3"><a href="#三层循环嵌套，时间复杂度为O-n-3" class="headerlink" title="三层循环嵌套，时间复杂度为O(n^3)"></a>三层循环嵌套，时间复杂度为O(n^3)</h3><pre><code><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">/*作者：Max</span></div><div class="line"><span class="comment"> 版本：v1.0</span></div><div class="line"><span class="comment"> 时间：2017-9-11 */</span> </div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"><span class="keyword">int</span> Array[<span class="number">6</span>] = &#123;<span class="number">-2</span>,<span class="number">11</span>,<span class="number">-4</span>,<span class="number">13</span>,<span class="number">-5</span>,<span class="number">-2</span>&#125;;</div><div class="line"></div><div class="line"><span class="comment">/*函数功能：最大子列和时间复杂度最高的算法*/</span> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxSubseqSum1</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> i,j,k;</div><div class="line">	<span class="keyword">int</span> MaxSum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> ThisSum; </div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span>(j=i;j&lt;<span class="number">6</span>;j++)</div><div class="line">		&#123;</div><div class="line">			ThisSum = <span class="number">0</span>;<span class="comment">//进入for循环初始化，忽略这个点，打脸 </span></div><div class="line">			<span class="keyword">for</span>(k=i;k&lt;=j;k++)	</div><div class="line">				ThisSum += <span class="built_in">array</span>[k];</div><div class="line">				</div><div class="line">			<span class="keyword">if</span>(ThisSum&gt;MaxSum)</div><div class="line">				MaxSum = ThisSum;</div><div class="line">		&#125; </div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> MaxSum;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*主函数*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> value;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">1000000</span>;</div><div class="line">	<span class="keyword">clock_t</span> start, finish;</div><div class="line"><span class="keyword">double</span>  duration;</div><div class="line"></div><div class="line">start = clock();</div><div class="line"><span class="keyword">while</span>(i)</div><div class="line">	&#123;</div><div class="line">	value = MaxSubseqSum1(&amp;Array);</div><div class="line">	i--;</div><div class="line">&#125;</div><div class="line">finish = clock();</div><div class="line"></div><div class="line">duration = (<span class="keyword">double</span>)(finish - start)/CLOCKS_PER_SEC;<span class="comment">//将结果转化成以 </span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"算法1执行100万次运行时间： %f seconds\n"</span>, duration);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"最大子列和为：%d\n"</span>,value);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><p>算法1的时间复杂度最高，实现方式是使用三种循环嵌套，<strong>对所有的子序列求和，在其中找到最大的</strong>。在我的计算机上跑100万次的时间大概是0.156s</p>
@@ -455,6 +455,8 @@ gitment.render('container')
       
         <div class="post-tags">
           
+            <a href="/tags/循环/" rel="tag"># 循环</a>
+          
             <a href="/tags/算法复杂度/" rel="tag"># 算法复杂度</a>
           
             <a href="/tags/在线处理/" rel="tag"># 在线处理</a>
@@ -462,8 +464,6 @@ gitment.render('container')
             <a href="/tags/分而治之/" rel="tag"># 分而治之</a>
           
             <a href="/tags/递归/" rel="tag"># 递归</a>
-          
-            <a href="/tags/循环/" rel="tag"># 循环</a>
           
         </div>
       
@@ -591,7 +591,7 @@ var jiathis_config={
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -602,7 +602,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -613,7 +613,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
